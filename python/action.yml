@@ -1,0 +1,4 @@
+runs:
+  using: 'script'
+  runtime: 'python'
+  main: 'index.py'
