@@ -1,4 +1,4 @@
 runs:
   using: 'script'
-  runtime: 'python'
+  runtime: 'python3'
   main: 'index.py'
