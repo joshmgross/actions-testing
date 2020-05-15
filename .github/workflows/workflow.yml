@@ -14,9 +14,13 @@ jobs:
 
     - uses: ./node
 
-    - uses: ./python
-    
-    - uses: joshmgross/hello-go@latest
+    - uses: joshmgross/hello-python@latest
+      id: python
       with:
         name: "Person"
         phrase: "hello"
+
+    - uses: joshmgross/hello-go@latest
+      with:
+        name: ${{ steps.python.outputs.name }}
+        phrase:  ${{ steps.python.outputs.phrase }}
