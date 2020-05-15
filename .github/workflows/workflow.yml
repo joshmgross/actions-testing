@@ -17,3 +17,6 @@ jobs:
     - uses: ./python
     
     - uses: joshmgross/hello-go@latest
+      with:
+        name: "Person"
+        phrase: "hello"
