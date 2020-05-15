@@ -11,16 +11,23 @@ jobs:
     - uses: actions/checkout@v2
     - run: echo "Hello world 🗺"
 
-
-    - uses: ./node
-
     - uses: joshmgross/hello-python@latest
-      id: python
+      id: hello-python
       with:
-        name: "Person"
-        phrase: "hello"
+        name: "Workflow"
+        phrase: "👋 Hello Demo"
+
+    - uses: ./bash
+      id: hello-bash
+      with:
+        name: ${{ steps.hello-python.outputs.name }}
+        phrase:  ${{ steps.hello-python.outputs.phrase }}
 
     - uses: joshmgross/hello-go@latest
+      id: hello-go
       with:
-        name: ${{ steps.python.outputs.name }}
-        phrase:  ${{ steps.python.outputs.phrase }}
+        name: ${{ steps.hello-bash.outputs.name }}
+        phrase:  ${{ steps.hello-bash.outputs.phrase }}
+    
+    - run: |
+        echo "${{ steps.hello-go.outputs.name }} says ${{ steps.hello-go.outputs.phrase }}."

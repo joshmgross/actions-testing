@@ -1,4 +1,0 @@
-runs:
-  using: 'script'
-  runtime: 'python3'
-  main: 'index.py'
