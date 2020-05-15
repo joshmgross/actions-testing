@@ -15,3 +15,5 @@ jobs:
     - uses: ./node
 
     - uses: ./python
+    
+    - uses: joshmgross/hello-go@latest
