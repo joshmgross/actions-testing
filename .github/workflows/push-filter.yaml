@@ -1,0 +1,14 @@
+name: 🗃
+
+on: [push]
+
+
+jobs:
+  build:
+  # Only run this workflow if the ref contains "pull"
+  - if: contains(github.ref, "pull")
+  
+  runs-on: ubuntu-latest
+  
+  steps:
+  - run: echo hello world
