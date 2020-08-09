@@ -6,10 +6,9 @@ on:
 
 jobs:
   command:
+    if: startsWith(github.event.comment.body, '/')
     runs-on: ubuntu-latest
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
+      - name: Output issue command
+        run: echo "${{ github.event.comment.body }}"
       
