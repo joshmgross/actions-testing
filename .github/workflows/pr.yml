@@ -2,7 +2,6 @@ name: Pull Request Label Testing
 
 on:
   pull_request:
-    types: [labeled, unlabeled]
 
 jobs:
   build:
