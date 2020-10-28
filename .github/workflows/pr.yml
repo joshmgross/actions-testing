@@ -10,5 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Dump PR labels
+        env:
+          PR_LABELS: ${{ toJson(github.event.pull_request.labels) }}
+        run: echo "$PR_LABELS"
