@@ -1,0 +1,26 @@
+name: ✉️ Testing post actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  step-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run action with true env
+        run: ./action
+        env:
+          SKIP_POST: true
+      - name: Run action with false env
+        run: ./action
+        env:
+          SKIP_POST: false
+      - name: Run action without env
+        run: ./action
+  job-env:
+    runs-on: ubuntu-latest
+    env:
+      SKIP_POST: true
+    steps:
+      - name: Run action with job env
+        run: ./action
