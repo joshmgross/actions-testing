@@ -7,6 +7,7 @@ jobs:
   step-env:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Run action with true env
         run: ./action
         env:
@@ -22,5 +23,6 @@ jobs:
     env:
       SKIP_POST: true
     steps:
+      - uses: actions/checkout@v2
       - name: Run action with job env
         run: ./action
