@@ -1,0 +1,13 @@
+name: To Lower
+
+on: workflow_dispatch
+
+jobs:
+  lower:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Lowercase a context value
+      id: lowercase
+      run: |
+        echo "::set-output name=value::$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')"
+      shell: bash
