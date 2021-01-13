@@ -11,3 +11,6 @@ jobs:
       run: |
         echo "::set-output name=value::$(echo ${{ github.repository_owner }} | tr '[:upper:]' '[:lower:]')"
       shell: bash
+
+    - name: Using the output value
+      run: echo "${{ steps.lowercase.outputs.value }}" # steps.STEP_ID.outputs.OUTPUT_NAME
