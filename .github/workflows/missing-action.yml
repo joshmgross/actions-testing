@@ -9,4 +9,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - run: joshmgross/does-not-exist@main
+      - uses: joshmgross/does-not-exist@main
