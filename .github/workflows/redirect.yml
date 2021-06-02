@@ -1,0 +1,12 @@
+name: Redirect
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: joshmgross/fantastic-enigma@main
