@@ -9,4 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: joshmgross/fantastic-enigma@main
+      - uses: joshmgross/fantastic-enigma@main # Original
+      - uses: joshmgross/joshmgross/fantastic-enigma-two@main # Current
