@@ -10,4 +10,5 @@ jobs:
       - uses: actions/checkout@v2
 
       - uses: joshmgross/fantastic-enigma@main # Original
-      - uses: joshmgross/fantastic-enigma-two@main # Current
+      - uses: joshmgross/fantastic-enigma-two@main # First rename
+      - uses: joshmgross/fantastic-enigma-three@main # Current
