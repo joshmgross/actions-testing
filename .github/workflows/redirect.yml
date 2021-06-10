@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@f1992d8d5878213d1b94064e4f8ee760c19288c1
 
       - uses: joshmgross/fantastic-enigma@main # Original
       - uses: joshmgross/fantastic-enigma-two@main # First rename
