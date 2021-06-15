@@ -1,0 +1,11 @@
+name: Continue on Error
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: exit 1
+        continue-on-error: true
