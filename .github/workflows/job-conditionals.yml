@@ -1,0 +1,11 @@
+name: Job Conditionals
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    if: ${{ always() && false }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "Hello world"
