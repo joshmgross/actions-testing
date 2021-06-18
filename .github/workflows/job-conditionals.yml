@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   a:
-    if: false
+    if: true
     runs-on: ubuntu-latest
 
     steps:
