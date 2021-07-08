@@ -1,0 +1,46 @@
+name: Conditional Inputs
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    # Using step outputs
+    # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions#outputs
+
+
+    # Setting a step output using the result of `github-script`
+    # https://github.com/actions/github-script#reading-step-results
+    # Alternative: Any script can set a step output using the `set-output` command
+    # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#setting-an-output-parameter
+    - name: Determine input from branch
+      id: branch-input
+      uses: actions/github-script@v4
+      with:
+        script: |
+          if (${{ github.ref }} === "refs/heads/main") {
+            return "default"
+          }
+
+          return "other"
+
+    - name: Action with input based on branch
+      uses: joshmgross/action-template
+      with:
+        my-input: ${{ steps.branch-input.outputs.result }}
+
+
+    # Using separate steps per case
+    - name: Action with input for main branch
+      if: ${{ github.ref == "refs/heads/main" }}
+      uses: joshmgross/action-template
+      with:
+        my-input: default
+    
+    - name: Action with input for other branches
+      if: ${{ github.ref != "refs/heads/main" }}
+      uses: joshmgross/action-template
+      with:
+        my-input: other
