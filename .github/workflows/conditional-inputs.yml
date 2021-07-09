@@ -34,13 +34,13 @@ jobs:
 
     # Using separate steps per case
     - name: Action with input for main branch
-      if: ${{ github.ref == "refs/heads/main" }}
+      if: ${{ github.ref == 'refs/heads/main' }}
       uses: joshmgross/action-template
       with:
         my-input: default
     
     - name: Action with input for other branches
-      if: ${{ github.ref != "refs/heads/main" }}
+      if: ${{ github.ref != 'refs/heads/main' }}
       uses: joshmgross/action-template
       with:
         my-input: other
