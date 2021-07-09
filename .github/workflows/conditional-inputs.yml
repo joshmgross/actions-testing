@@ -37,10 +37,10 @@ jobs:
       if: ${{ github.ref == 'refs/heads/main' }}
       uses: joshmgross/action-template@main
       with:
-        my-input: default
+        my-input: "default"
     
     - name: Action with input for other branches
       if: ${{ github.ref != 'refs/heads/main' }}
       uses: joshmgross/action-template@main
       with:
-        my-input: other
+        my-input: "other"
