@@ -27,7 +27,7 @@ jobs:
           return "other"
 
     - name: Action with input based on branch
-      uses: joshmgross/action-template
+      uses: joshmgross/action-template@main
       with:
         my-input: ${{ steps.branch-input.outputs.result }}
 
@@ -35,12 +35,12 @@ jobs:
     # Using separate steps per case
     - name: Action with input for main branch
       if: ${{ github.ref == 'refs/heads/main' }}
-      uses: joshmgross/action-template
+      uses: joshmgross/action-template@main
       with:
         my-input: default
     
     - name: Action with input for other branches
       if: ${{ github.ref != 'refs/heads/main' }}
-      uses: joshmgross/action-template
+      uses: joshmgross/action-template@main
       with:
         my-input: other
