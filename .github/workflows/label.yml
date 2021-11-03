@@ -1,0 +1,19 @@
+name: Labelled
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  skip:
+    if: "${{ contains(github.event.label.name, 'needs: triage') }}"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello label"
+      
+  event:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "$GITHUB_EVENT"
+        env:
+          GITHUB_EVENT: ${{ github.event }}
