@@ -16,4 +16,4 @@ jobs:
     steps:
       - run: echo "$GITHUB_EVENT"
         env:
-          GITHUB_EVENT: ${{ github.event }}
+          GITHUB_EVENT: ${{ toJson(github.event) }}
