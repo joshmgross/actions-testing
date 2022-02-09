@@ -77,7 +77,7 @@ jobs:
           script: |
             try {
               console.log('Before dynamic import')
-              const printStuff = await import('./src/print-stuff.js')
+              const printStuff = await import('${{ github.workspace}}/src/print-stuff.js')
               console.log('After dynamic import')
               await printStuff()
               console.log('At the end')
