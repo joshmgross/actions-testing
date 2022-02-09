@@ -1,0 +1,24 @@
+{
+  "name": "actions-testing",
+  "version": "1.0.0",
+  "description": "Testing some actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshmgross/actions-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshmgross/actions-testing/issues"
+  },
+  "homepage": "https://github.com/joshmgross/actions-testing#readme",
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "node-es-module-loader": "^0.3.8"
+  }
+}
