@@ -1,0 +1,43 @@
+name: Debug testing
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - name: debug true
+        uses: actions/github-script@v6
+        with:
+          debug: true
+          script: |
+            const i = github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 3
+            });
+            core.info(i.title);
+      - name: debug 'true'
+        uses: actions/github-script@v6
+        with:
+          debug: 'true'
+          script: |
+            const i = github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 3
+            });
+            core.info(i.title);
+      - name: debug false
+        uses: actions/github-script@v6
+        with:
+          debug: false
+          script: |
+            const i = github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: 3
+            });
+            core.info(i.title);
