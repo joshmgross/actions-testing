@@ -18,7 +18,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: 3
             });
-            core.info(i.title);
+            core.info(JSON.stringify(issue));
       - name: debug 'true'
         uses: actions/github-script@v6
         with:
@@ -29,7 +29,7 @@ jobs:
               repo: context.repo.repo,
               issue_number: 3
             });
-            core.info(i.title);
+            core.info(JSON.stringify(issue));
       - name: debug false
         uses: actions/github-script@v6
         with:
@@ -40,4 +40,4 @@ jobs:
               repo: context.repo.repo,
               issue_number: 3
             });
-            core.info(i.title);
+            core.info(JSON.stringify(issue));
