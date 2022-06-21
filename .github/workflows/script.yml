@@ -1,0 +1,15 @@
+name: GitHub Script
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            for (let i in github.rest.actions)
+              console.log(i)
