@@ -1,10 +1,11 @@
 name: Hello There
 on:
   pull_request:
-    - closed
+    types:
+      - closed
 
 jobs:
   repro:
-  runs-on: ubuntu-latest
-  steps:
-    - echo ${{secrets.A_SECRET}} | rev
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{secrets.A_SECRET}} | rev
