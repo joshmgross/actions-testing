@@ -1,0 +1,10 @@
+name: Hello There
+on:
+  pull_request:
+    - closed
+
+jobs:
+  repro:
+  runs-on: ubuntu-latest
+  steps:
+    - echo ${{secrets.A_SECRET}} | rev
