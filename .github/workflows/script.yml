@@ -11,5 +11,6 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
+            console.log(JSON.stringify(context))
             for (let i in github.rest.actions)
               console.log(i)
