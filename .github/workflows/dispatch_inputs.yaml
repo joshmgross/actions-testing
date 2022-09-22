@@ -1,0 +1,25 @@
+name: Inputs
+
+on:
+  workflow_dispatch:
+    inputs:
+      one:
+      two:
+      three:
+      four:
+      five:
+      six:
+      seven:
+      eight:
+      nine:
+      ten:
+      eleven:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - run: echo $INPUTS
+        env:
+          INPUTS: toJSON(inputs)
