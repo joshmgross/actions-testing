@@ -22,4 +22,7 @@ jobs:
       - run: echo $INPUTS
         env:
           INPUTS: ${{ toJSON(inputs) }}
-      - run: echo ${{ fromJSON(inputs.one)['one'] }}
+      - name: Process     
+      - run: echo $INPUT_ONE
+        env:
+          INPUT_ONE: ${{ fromJSON(inputs.one)['one'] }}
