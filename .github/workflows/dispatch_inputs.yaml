@@ -23,3 +23,4 @@ jobs:
         env:
           INPUTS: ${{ toJSON(inputs) }}
       - run: echo ${{ fromJSON(inputs.one)['one'] }}
+        name: Ouput a field from a JSON input
