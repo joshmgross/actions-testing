@@ -21,4 +21,4 @@ jobs:
     steps:
       - run: echo $INPUTS
         env:
-          INPUTS: toJSON(inputs)
+          INPUTS: ${{ toJSON(inputs) }}
