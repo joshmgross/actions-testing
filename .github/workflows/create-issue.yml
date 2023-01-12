@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: gh issue create --title "Test Issue" --body "Testing issue creation"
+      - run: gh issue create --repo "${{ github.repository }}" --title "Test Issue" --body "Testing issue creation"
         env:
           GH_TOKEN: ${{ github.token }}
 
@@ -22,6 +22,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: gh issue create --title "Test Issue" --body "Testing issue creation"
+      - run: gh issue create --repo "${{ github.repository }}" --title "Test Issue" --body "Testing issue creation"
         env:
           GH_TOKEN: ${{ github.token }}
