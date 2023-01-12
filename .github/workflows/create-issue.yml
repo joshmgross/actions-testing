@@ -11,6 +11,8 @@ jobs:
 
     steps:
       - run: gh issue create --title "Test Issue" --body "Testing issue creation"
+        env:
+          GH_TOKEN: ${{ github.token }}
 
   issue-contents-permission:
     permissions:
@@ -21,3 +23,5 @@ jobs:
 
     steps:
       - run: gh issue create --title "Test Issue" --body "Testing issue creation"
+        env:
+          GH_TOKEN: ${{ github.token }}
