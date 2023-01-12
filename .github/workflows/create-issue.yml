@@ -1,0 +1,23 @@
+name: Create Issue
+
+on: workflow_dispatch
+
+jobs:
+  issues-permission:
+    permissions:
+      issues: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: gh issue create --title "Test Issue" --body "Testing issue creation"
+
+  issue-contents-permission:
+    permissions:
+      contents: read
+      issues: write
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: gh issue create --title "Test Issue" --body "Testing issue creation"
