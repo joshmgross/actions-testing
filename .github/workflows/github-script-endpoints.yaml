@@ -1,0 +1,22 @@
+name: GitHub Script Endpoints
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            for (const id in github.rest.actions) {
+              try {
+                if (typeof(github.rest.actions[id]) === "function") {
+                  console.log(id);
+                }
+              } catch (err) {
+                console.error(err);
+              }
+            }
