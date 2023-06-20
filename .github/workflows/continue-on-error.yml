@@ -10,4 +10,6 @@ jobs:
       - id: my-step-id
         run: exit 1
         continue-on-error: true
-      - run: echo ${{ steps.my-step-id.conclusion }}
+      - run: echo "$STEP_INFO"
+        env:
+          STEP_INFO: ${{ toJSON(steps.my-step-id) }}
