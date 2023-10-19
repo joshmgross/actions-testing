@@ -1,0 +1,17 @@
+name: Repository Name 🏷️
+
+on:
+  workflow_dispatch:
+  push:
+    paths: '.github/workflows/repository-name.yaml'
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - run: echo $EVENT
+        env:
+          EVENT: ${{ toJSON(github.event) }}
+
+      - run: echo "${{ github.event.repository.name }}"
