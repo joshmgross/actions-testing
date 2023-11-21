@@ -10,7 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "hello label"
+
+  emojis:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "⌚"
+        if: "${{ contains(github.event.label.name, '⌚') }}"
       
+      - run: echo ":watch:"
+        if: "${{ contains(github.event.label.name, ':watch:') }}"
+
   event:
     runs-on: ubuntu-latest
     steps:
