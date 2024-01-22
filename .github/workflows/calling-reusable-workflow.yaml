@@ -13,9 +13,8 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yaml
 
   deploy:
-    # build is defined within test, does this work?
-    needs: [build]
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ needs.build.outputs.build_id }}"
+      - run: echo "${{ needs.test.outputs.build_id }}"
 
