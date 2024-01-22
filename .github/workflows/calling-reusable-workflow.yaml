@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
   test:
-    uses: ./github/workflows/reusable-workflow.yaml
+    uses: ./.github/workflows/reusable-workflow.yaml
 
   deploy:
     # build is defined within test, does this work?
