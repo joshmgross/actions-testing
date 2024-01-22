@@ -1,0 +1,21 @@
+name: Reusable Workflows!
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    outputs:
+      build_id: 123
+    runs-on: ubuntu-latest
+
+  test:
+    uses: ./github/workflows/reusable-workflow.yaml
+
+  deploy:
+    # build is defined within test, does this work?
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ needs.build.outputs.build_id }}"
+
