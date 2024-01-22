@@ -4,11 +4,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    outputs:
-      build_id: 123
-    runs-on: ubuntu-latest
-
   test:
     uses: ./.github/workflows/reusable-workflow.yaml
 
