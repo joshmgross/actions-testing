@@ -8,8 +8,8 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yaml
 
   deploy:
-    needs: [test]
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ needs.test.outputs.build_id }}"
+      - run: echo "Hello"
 
