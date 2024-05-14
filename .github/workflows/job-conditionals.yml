@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: exit 1
+      - run: exit 0
   b:
     if: false
     runs-on: ubuntu-latest
@@ -21,7 +21,7 @@ jobs:
 
     steps:
       - run: echo "Hello world"
-  
+
   d:
    needs: [a, b, c]
    if: ${{ always() && contains(needs.*.result, 'success') && !(contains(needs.*.result, 'failure')) }}
