@@ -20,3 +20,4 @@ jobs:
       with:
         key: ${{ runner.os }}-${{ hashFiles('prime_numbers.txt') }}-primes
         save-always: true
+        path: prime_numbers.txt
