@@ -1,0 +1,22 @@
+name: Caching Primes
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Write Prime Numbers to File
+      run: |
+        echo "Writing prime numbers to prime_numbers.txt"
+        node -e "const fs = require('fs'); const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]; fs.writeFileSync('prime_numbers.txt', primes.join(', '));"
+
+   # https://github.com/actions/cache/pull/1452
+    - name: Cache Primes
+      uses: actions/cache@joshmgross/deprecate-save-always
+      with:
+        key: ${{ runner.os }}-${{ hashFiles(prime_numbers.txt) }}-primes
+        save-always: true
