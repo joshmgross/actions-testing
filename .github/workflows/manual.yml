@@ -1,0 +1,12 @@
+name: Rate Limit
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: [ ubuntu-latest ]
+
+    steps:
+      - run: |
+          gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /rate_limit
