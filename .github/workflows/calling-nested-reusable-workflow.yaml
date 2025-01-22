@@ -1,0 +1,11 @@
+name: Reusable Workflows!
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    uses: ./.github/workflows/nested/reusable-workflow.yaml
+    with:
+      username: 'monalisa'
+
