@@ -11,12 +11,22 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/github-script@v7
+      - uses: actions/github-script@main
         with:
           script: |
-            await github.rest.issues.createComment({
+            await octokit.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: ${{ github.event.issue.number }},
               body: "Hello!"
+            })
+      - uses: actions/github-script@main
+        with:
+          script: |
+            const octokit = github
+            await octokit.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: ${{ github.event.issue.number }},
+              body: "Hello Again!"
             })
