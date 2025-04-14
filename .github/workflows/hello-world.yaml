@@ -1,5 +1,7 @@
 name: Hello 🌎
 
+run-name: Hello ${{ github.event.inputs.name }}
+
 on:
   workflow_dispatch:
     inputs:
